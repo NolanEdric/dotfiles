@@ -148,7 +148,7 @@ complete -C /usr/local/bin/tk0.17.3 tk
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # run startup scripts in ~/scripts
-~/s/startup_services.sh
+# ~/s/startup_services.sh
 
 export GOPATH="/home/tidu/go"
 export PATH="/home/tidu/.local/bin:$GOPATH/bin:$PATH"
