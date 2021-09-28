@@ -1,0 +1,5 @@
+#activehacker account
+Host github.com
+	HostName github.com
+	User git
+	IdentityFile ~/.ssh/github/tidunguyen/id_rsa

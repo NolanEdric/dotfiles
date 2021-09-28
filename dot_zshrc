@@ -102,11 +102,11 @@ source $ZSH/oh-my-zsh.sh
 # if [[ -n $SSH_CONNECTION ]]; then
 #   export EDITOR='vim'
 # else
-#   export EDITOR='mvim'
+#   export EDITOR='vim'
 # fi
 
 # Compilation flags
-# export ARCHFLAGS="-arch x86_64"
+export ARCHFLAGS="-arch x86_64"
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -117,41 +117,8 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-__conda_setup="$('/home/tidu/miniconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
-if [ $? -eq 0 ]; then
-    eval "$__conda_setup"
-else
-    if [ -f "/home/tidu/miniconda3/etc/profile.d/conda.sh" ]; then
-        . "/home/tidu/miniconda3/etc/profile.d/conda.sh"
-    else
-        export PATH="/home/tidu/miniconda3/bin:$PATH"
-    fi
-fi
-unset __conda_setup
-# <<< conda initialize <<<
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
-. "$HOME/.cargo/env"
-
-
-export PATH="$HOME/.jenv/bin:$PATH"
-eval "$(jenv init -)"
-
-export PATH="$HOME/.yarn/bin:$PATH"
-complete -C /usr/local/bin/tk0.17.3 tk
-
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
-
-# run startup scripts in ~/scripts
-# ~/s/startup_services.sh
-
-export GOPATH="/home/tidu/go"
-export PATH="/home/tidu/.local/bin:$GOPATH/bin:$PATH"
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -166,6 +133,8 @@ if [ -f ~/.aliases ]; then
    . ~/.aliases
 fi
 
-# add bin to path
-export PATH="$HOME/bin:$PATH"
+# add bin and scripts to path
+export PATH="$HOME/bin:$HOME/scripts:$PATH"
 
+autoload -Uz +X compinit && compinit -u
+autoload -Uz +X bashcompinit && bashcompinit -u
