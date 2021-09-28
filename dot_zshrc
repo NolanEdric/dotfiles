@@ -138,3 +138,8 @@ export PATH="$HOME/bin:$HOME/scripts:$PATH"
 
 autoload -Uz +X compinit && compinit -u
 autoload -Uz +X bashcompinit && bashcompinit -u
+
+
+for file in ~/.zshrc.d/*.zshrc; do
+    source "$file"
+done
