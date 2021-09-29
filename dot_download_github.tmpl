@@ -1,0 +1,8 @@
+{
+   "auth": {
+        "username" : {{ (bitwarden "item" "GitHub File Fetcher").login.username | quote }},
+        "password" : {{ (bitwarden "item" "GitHub File Fetcher").login.password | quote }}
+   },
+   "alwaysUseAuth" : true,
+   "timeout" : 5000 
+}
