@@ -1,2 +1,16 @@
+alias .=source
+
+if [ -f ~/.aliases ]; then
+   . ~/.aliases
+fi
+
+
+# add bin and scripts to path
+export PATH="$HOME/bin:$HOME/scripts:$PATH"
+
+for file in ~/.zshenv.d/*.zsh; do
+    . "$file"
+done
+
 . "$HOME/.cargo/env"
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"

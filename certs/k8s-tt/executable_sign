@@ -1,0 +1,11 @@
+#! /usr/bin/env zsh
+
+openssl x509 -req \
+    -in k8s-tt.csr \
+    -CA ../root-ca/ca.crt \
+    -CAkey ../root-ca/ca.key \
+    -out k8s-tt.crt \
+    -days 3650 \
+    -CAcreateserial \
+    -extfile k8s-tt.ext \
+    -sha256

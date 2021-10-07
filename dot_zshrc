@@ -1,6 +1,7 @@
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
+DISABLE_MAGIC_FUNCTIONS=true
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
@@ -85,6 +86,7 @@ plugins=(
     command-not-found
     zsh-syntax-highlighting
     zsh-autosuggestions
+    zsh-completions
     kubectl
     kubectx
 )
@@ -129,17 +131,10 @@ xterm*|rxvt*)
     ;;
 esac
 
+autoload -U compinit && compinit
+# autoload -Uz +X compinit && compinit -u
+# autoload -Uz +X bashcompinit && bashcompinit -u
+
 if [ -f ~/.aliases ]; then
    . ~/.aliases
 fi
-
-# add bin and scripts to path
-export PATH="$HOME/bin:$HOME/scripts:$PATH"
-
-autoload -Uz +X compinit && compinit -u
-autoload -Uz +X bashcompinit && bashcompinit -u
-
-
-for file in ~/.zshrc.d/*.zshrc; do
-    source "$file"
-done

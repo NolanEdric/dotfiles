@@ -1,0 +1,22 @@
+[req]
+req_extensions = v3_req
+prompt = no
+distinguished_name = dname
+
+[v3_req]
+authorityKeyIdentifier=keyid,issuer
+basicConstraints=CA:TRUE
+keyUsage = digitalSignature, nonRepudiation, keyEncipherment, dataEncipherment
+subjectAltName = @alt_names
+
+[dname]
+C = US
+ST = CA
+L = Los Angeles
+O = TiDu Nguyen
+OU = TiDu Nguyen
+CN = TiDu Nguyen
+
+[alt_names]
+DNS.1 = tt
+DNS.2 = *.tt
