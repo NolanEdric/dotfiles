@@ -4,6 +4,6 @@ Host github.com
 	IdentityFile ~/.ssh/github/tidunguyen/id_rsa
 
 Host win
-	HostName 192.168.1.100
-	User TiDu
+	HostName 10.0.0.1
+	User tidu
 	IdentityFile ~/.ssh/win/id_rsa
