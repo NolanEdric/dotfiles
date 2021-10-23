@@ -1,0 +1,6 @@
+#! /usr/bin/env zsh
+
+ln -f ca.crt rootCA.pem
+ln -f ca.key rootCA-key.pem
+
+mkcert -install
