@@ -1,3 +1,4 @@
+# zmodload zsh/zprof
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -131,9 +132,31 @@ xterm*|rxvt*)
     ;;
 esac
 
-autoload -U compinit && compinit
-# autoload -Uz +X compinit && compinit -u
-# autoload -Uz +X bashcompinit && bashcompinit -u
+setopt extendedglob
+if [[ $ZSH_DISABLE_COMPFIX != true ]]; then
+  # If completion insecurities exist, warn the user without enabling completions.
+  if ! compaudit &>/dev/null; then
+    # This function resides in the "lib/compfix.zsh" script sourced above.
+    handle_completion_insecurities
+  # Else, enable and cache completions to the desired file.
+  else
+    if [[ -n "${ZSH_COMPDUMP}"(#qN.mh+24) ]]; then
+      compinit -d "${ZSH_COMPDUMP}"
+      compdump
+    else
+      compinit -C
+    fi
+  fi
+else
+  if [[ -n "${ZSH_COMPDUMP}"(#qN.mh+24) ]]; then
+    compinit -i -d "${ZSH_COMPDUMP}"
+    compdump
+  else
+    compinit -C
+  fi
+fi
+
+
 
 if [ -f ~/.aliases ]; then
    . ~/.aliases
@@ -141,3 +164,5 @@ fi
 
 export EDITOR=nvim
 export TIMEFMT=$'\n================\nCPU\t%P\nuser\t%*U\nsystem\t%*S\ntotal\t%*E'
+
+# zprof 
