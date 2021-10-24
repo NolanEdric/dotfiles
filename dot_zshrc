@@ -140,3 +140,4 @@ if [ -f ~/.aliases ]; then
 fi
 
 export EDITOR=nvim
+export TIMEFMT=$'\n================\nCPU\t%P\nuser\t%*U\nsystem\t%*S\ntotal\t%*E'
