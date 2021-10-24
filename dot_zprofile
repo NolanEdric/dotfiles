@@ -1,1 +1,3 @@
-. "$HOME/.cargo/env"
+for file in ~/.zprofile.d/*.zsh; do
+    . "$file"
+done

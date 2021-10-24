@@ -5,7 +5,6 @@ if [ -f ~/.aliases ]; then
 fi
 
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-. "$HOME/.cargo/env"
 
 # add bin and scripts to path
 export PATH="$HOME/bin:$HOME/scripts:$PATH"
