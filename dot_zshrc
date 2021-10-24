@@ -134,9 +134,12 @@ esac
 
 autoload -Uz compinit
 
-if [[ $(find "$ZSH_COMPDUMP" -mtime +1 -print) ]]; then
+if [[ $(find "$HOME/.zcompdump" -mtime +1 -print) ]]; then
+    # echo "dumping"
 	compinit
+    zcompile "$HOME/.zcompdump"
 else
+    # echo "caching"
 	compinit -C
 fi
 
