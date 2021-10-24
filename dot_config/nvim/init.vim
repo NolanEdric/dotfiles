@@ -10,7 +10,18 @@ filetype indent on
 
 " Set to auto read when a file is changed from the outside
 set autoread
-au FocusGained,BufEnter * checktime
+au FocusGained,BufEnter,CursorHold,CursorHoldI * checktime
+
+" Triger `autoread` when files changes on disk
+" https://unix.stackexchange.com/questions/149209/refresh-changed-content-of-file-opened-in-vim/383044#383044
+" https://vi.stackexchange.com/questions/13692/prevent-focusgained-autocmd-running-in-command-line-editing-mode
+" autocmd FocusGained,BufEnter,CursorHold,CursorHoldI *
+"    \ if mode() !~ '\v(c|r.?|!|t)' && getcmdwintype() == '' | checktime | endif
+
+" Notification after file change
+" https://vi.stackexchange.com/questions/13091/autocmd-event-for-autoread
+autocmd FileChangedShellPost *
+  \ echohl WarningMsg | echo "File changed on disk. Buffer reloaded." | echohl None
 
 " With a map leader it's possible to do extra key combinations
 " like <leader>w saves the current file
@@ -111,7 +122,7 @@ if $COLORTERM == 'gnome-terminal'
 endif
 
 try
-    colorscheme desert
+    colorscheme molokai
 catch
 endtry
 
@@ -167,4 +178,29 @@ set wrap "Wrap lines
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number
 set relativenumber
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Plugins
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+lua require('plugins')
+
+autocmd BufWritePost plugins.lua PackerSync
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Minimap
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:minimap_width = 20
+let g:minimap_auto_start = 1
+let g:minimap_auto_start_win_enter = 1
+" let g:minimap_highlight_range = 1
+" let g:minimap_git_colors = 1
+let g:minimap_highlight_search = 1
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Minimap
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" let g:molokai_original = 1
+let g:rehash256 = 1
+
 
