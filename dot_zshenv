@@ -12,3 +12,5 @@ export PATH="$HOME/bin:$HOME/scripts:$PATH"
 for file in ~/.zshenv.d/*.zsh; do
     . "$file"
 done
+
+export ZDOTDIR=$HOME
