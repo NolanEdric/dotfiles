@@ -7,10 +7,12 @@ fi
 eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # add bin and scripts to path
-export PATH="$HOME/bin:$HOME/scripts:$PATH"
+export PATH="$HOME/bin:$HOME/.local/bin:$HOME/scripts:$PATH"
 
 for file in ~/.zshenv.d/*.zsh; do
     . "$file"
 done
+
+skip_global_compinit=1
 
 export ZDOTDIR=$HOME

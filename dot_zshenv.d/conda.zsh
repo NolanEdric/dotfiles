@@ -1,5 +1,5 @@
-load_conda() {
-    unset -f python
+conda() {
+    unset -f conda
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
     __conda_setup="$('/home/tidu/miniconda3/bin/conda' 'shell.zsh' 'hook' 2>/dev/null)"
@@ -14,9 +14,4 @@ load_conda() {
     fi
     unset __conda_setup
     # <<< conda initialize <<<
-}
-
-python() {
-    load_conda
-    python $@
 }
