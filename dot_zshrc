@@ -138,3 +138,5 @@ autoload -U compinit && compinit
 if [ -f ~/.aliases ]; then
    . ~/.aliases
 fi
+
+export EDITOR=nvim
