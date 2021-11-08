@@ -1,4 +1,4 @@
-#t:: Run "C:\Program Files\Alacritty\alacritty.exe"
+#t:: Run wt
 ^+Insert::Send ^x
 !Backspace::Send ^z
 ; AppsKey
