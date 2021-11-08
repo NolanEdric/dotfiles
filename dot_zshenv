@@ -4,7 +4,7 @@ if [ -f ~/.aliases ]; then
    . ~/.aliases
 fi
 
-eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+# eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
 
 # add bin and scripts to path
 export PATH="$HOME/bin:$HOME/.local/bin:$HOME/scripts:$PATH"
