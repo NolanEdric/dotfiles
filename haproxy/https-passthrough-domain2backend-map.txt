@@ -1,0 +1,2 @@
+ca.tidu.live    be_ca_https_passthrough
+k8s.tidu.live   be_k8s_https_passthrough
