@@ -1,0 +1,3 @@
+cr.tidu.live be_cr_https_proxied
+minio.tidu.live be_minio_https_proxied
+minio-console.tidu.live be_minio-console_https_proxied
