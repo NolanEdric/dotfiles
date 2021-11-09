@@ -1,4 +1,11 @@
-echo 'EDITOR=micro' | sudo tee -a /etc/environment
+echo 'export EDITOR=micro' | sudo tee -a /etc/profile
+
+echo '# Defaults specification
+Defaults editor=/usr/bin/micro' | sudo tee /etc/sudoers.d/editor
+
+sudo mkdir -p /root/.config/micro
+
+sudo cp -vfR "$HOME/.config/micro/settings.json" "/root/.config/micro/settings.json"
 
 # sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
