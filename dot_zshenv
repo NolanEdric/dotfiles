@@ -16,3 +16,7 @@ done
 skip_global_compinit=1
 
 export ZDOTDIR=$HOME
+
+if ! [[ -v IPv4 ]]; then
+    export IPv4=$(ip -o -4 addr list eth0 | awk '{print $4}' | cut -d/ -f1)
+fi
