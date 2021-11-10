@@ -52,6 +52,7 @@
     "scrollspeed": 2,
     "smartpaste": true,
     "softwrap": false,
+    "wordwrap": true,
     "splitbottom": true,
     "splitright": true,
     "status": true,

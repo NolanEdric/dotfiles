@@ -4,7 +4,7 @@ sudo mkdir -p /root/.config/micro
 
 sudo cp -vfR "$HOME/.config/micro/settings.json" "/root/.config/micro/settings.json"
 
-sudo update-alternatives --install /usr/bin/editor editor /usr/bin/micro 100
+sudo update-alternatives --install /usr/bin/editor editor /home/linuxbrew/.linuxbrew/bin/micro 100
 
 # sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
@@ -20,5 +20,8 @@ sudo update-alternatives --install /usr/bin/editor editor /usr/bin/micro 100
 
 # git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
 
+# git clone https://github.com/romkatv/zsh-defer.git ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-defer
+
 # git clone --depth 1 https://github.com/wbthomason/packer.nvim\
 #  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+

@@ -3,12 +3,9 @@
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
 DISABLE_MAGIC_FUNCTIONS=true
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
-
-# reenable cursor blinking after disabled by p10k above
-print -n '\033[5 q'
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
@@ -91,6 +88,7 @@ plugins=(
     zsh-syntax-highlighting
     zsh-autosuggestions
     zsh-completions
+    zsh-defer
     kubectl
     kubectx
 )
@@ -159,3 +157,6 @@ export TIMEFMT=$'\n================\nCPU\t%P\nuser\t%*U\nsystem\t%*S\ntotal\t%*E
 # fi
 
 # zprof 
+
+# reenable cursor blinking after disabled by p10k above
+# zsh-defer -1c 'print -n "\033[5 q"'
