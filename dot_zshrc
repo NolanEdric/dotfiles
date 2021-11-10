@@ -157,6 +157,4 @@ export TIMEFMT=$'\n================\nCPU\t%P\nuser\t%*U\nsystem\t%*S\ntotal\t%*E
 
 # zprof 
 
-precmd() { echo -ne "\e[5 q" }
-
-zsh-defer -1 precmd
+precmd() { zsh-defer -1c 'echo -ne "\e[5 q"' }
