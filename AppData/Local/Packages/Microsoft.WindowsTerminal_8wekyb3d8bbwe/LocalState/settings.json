@@ -3,6 +3,22 @@
     "actions": 
     [
         {
+            "command": "unbound",
+            "keys": "alt+shift+up"
+        },
+        {
+            "command": "unbound",
+            "keys": "alt+shift+down"
+        },
+           {
+            "command": "unbound",
+            "keys": "ctrl+shift+up"
+        },
+        {
+            "command": "unbound",
+            "keys": "ctrl+shift+down"
+        },
+        {
             "command": 
             {
                 "action": "copy",
@@ -13,6 +29,13 @@
         {
             "command": "paste",
             "keys": "ctrl+v"
+        },
+        {
+            "command": 
+            {
+                "action": "scrollUp"
+            },
+            "keys": "ctrl+alt+up"
         },
         {
             "command": "find",
@@ -26,6 +49,13 @@
                 "splitMode": "duplicate"
             },
             "keys": "alt+shift+d"
+        },
+        {
+            "command": 
+            {
+                "action": "scrollDown"
+            },
+            "keys": "ctrl+alt+down"
         }
     ],
     "alwaysShowTabs": false,
@@ -78,7 +108,7 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "commandline": "wsl.exe -d Debian --cd ~",
+                "commandline": "debian.exe",
                 "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
                 "hidden": false,
                 "icon": "C:\\Users\\TiDu\\Pictures\\debian.png",
@@ -86,7 +116,7 @@
                 "source": "Windows.Terminal.Wsl"
             },
             {
-                "commandline": "wsl.exe --cd ~",
+                "commandline": "arch.exe",
                 "guid": "{89fa2078-aec4-4cc5-af0f-219f15d5ea20}",
                 "hidden": false,
                 "icon": "C:\\Users\\TiDu\\Pictures\\arch.png",
@@ -304,7 +334,7 @@
             "yellow": "#808000"
         }
     ],
-    "tabWidthMode": "titleLength",
+    "tabWidthMode": "compact",
     "trimBlockSelection": true,
     "useAcrylicInTabRow": true,
     "windowingBehavior": "useExisting"
