@@ -16,3 +16,4 @@ Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 
 $env:BW_SESSION="9ugAleOixlubpdTbLrmW+RCLlqZ2Axlh7CMNfUtXVfG5nVoPUwEO9whgAt5wRAqOa0bK+Ky7956AScgYwWFzfw=="
+$env:MICRO_TRUECOLOR=1

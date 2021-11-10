@@ -6,7 +6,7 @@
     "backup": true,
     "backupdir": "",
     "basename": false,
-    "clipboard": "terminal",
+    "clipboard": "external",
     "colorcolumn": 0,
     "colorscheme": "default",
     "comment": true,
