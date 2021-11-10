@@ -61,8 +61,8 @@
     "sucmd": "sudo",
     "syntax": true,
     "tabmovement": false,
-    "tabsize": 4,
-    "tabstospaces": false,
+    "tabsize": 2,
+    "tabstospaces": true,
     "useprimary": true,
     "xterm": false
 }
