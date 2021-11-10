@@ -61,7 +61,7 @@
     "statusline": true,
     "sucmd": "sudo",
     "syntax": true,
-    "tabmovement": false,
+    "tabmovement": true,
     "tabsize": 2,
     "tabstospaces": true,
     "useprimary": true,
