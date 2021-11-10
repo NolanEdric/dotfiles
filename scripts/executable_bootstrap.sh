@@ -21,6 +21,7 @@ sudo cp -vfR "$HOME/.config/micro/settings.json" "/root/.config/micro/settings.j
 
 # git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
 
-git clone --depth 1 https://github.com/wbthomason/packer.nvim\
- ~/.local/share/nvim/site/pack/packer/start/packer.nvim
+# git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+#  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
+# git clone https://github.com/romkatv/zsh-defer.git ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-defer

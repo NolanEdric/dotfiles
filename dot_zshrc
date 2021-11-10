@@ -7,9 +7,6 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# reenable cursor blinking after disabled by p10k above
-print -n '\033[5 q'
-
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -91,6 +88,7 @@ plugins=(
     zsh-syntax-highlighting
     zsh-autosuggestions
     zsh-completions
+    zsh-defer
     kubectl
     kubectx
 )
@@ -158,3 +156,7 @@ export TIMEFMT=$'\n================\nCPU\t%P\nuser\t%*U\nsystem\t%*S\ntotal\t%*E
 # fi
 
 # zprof 
+
+precmd() { echo -ne "\e[5 q" }
+
+zsh-defer -1 precmd
