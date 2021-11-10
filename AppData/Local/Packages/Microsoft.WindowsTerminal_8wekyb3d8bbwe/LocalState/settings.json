@@ -10,7 +10,7 @@
             "command": "unbound",
             "keys": "alt+shift+down"
         },
-           {
+        {
             "command": "unbound",
             "keys": "ctrl+shift+up"
         },
@@ -74,6 +74,7 @@
                 "window",
                 "taskbar"
             ],
+            "closeOnExit": "always",
             "font": 
             {
                 "face": "MesloLGS NF",
