@@ -1,0 +1,12 @@
+cloudflare:
+  endpoint: https://api.cloudflare.com/client/v4
+  key: AGS54T2dvuGR3YlIB4sbt3ipdkPJd6ijybocKo4r
+  domain: tidu.live
+dynu_simple:
+  endpoint: https://api.dynu.com/nic/update
+  key: tidu.nguyen.2000@gmail.com dynu-0306uDiT
+  domain: tidu.ooguy.com
+dynu:
+  endpoint: https://api.dynu.com/v2
+  key: UW3356544X4dbcg2W56bc3U56744c5Y2
+  domain: tidu.giize.com

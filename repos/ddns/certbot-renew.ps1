@@ -1,0 +1,1 @@
+certbot renew --manual-auth-hook "$PSScriptroot/update_acme_cloudflare.ps1" --pre-hook "nssm stop nginx" --post-hook "nssm start nginx" --deploy-hook
