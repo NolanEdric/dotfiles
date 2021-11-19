@@ -1,0 +1,31 @@
+version: '3'
+services:
+  registry:
+    image: registry
+    volumes:
+      - registry-data:/var/lib/registry
+      - ./config.yaml:/etc/docker/registry/config.yml
+    networks:
+      - registry-ui-net
+    restart: always
+
+  ui:
+    image: joxit/docker-registry-ui
+    ports:
+      - 127.0.0.1:60001:80
+    environment:
+      - REGISTRY_TITLE=cr.tidu.giize.com
+      - NGINX_PROXY_PASS_URL=http://registry:5000
+      - SINGLE_REGISTRY=true
+      - DELETE_IMAGES=true
+    depends_on:
+      - registry
+    networks:
+      - registry-ui-net
+    restart: always
+
+volumes:
+  registry-data:
+
+networks:
+  registry-ui-net:
