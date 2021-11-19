@@ -1,1 +1,1 @@
-knative.k8s.tidu.live   be_knative_k8s_http
+knative.k8s.tidu.giize.com   be_knative_k8s_http
