@@ -7,6 +7,7 @@ $updater = ".\ddns.exe"
 $subdomain =  $env:CERTBOT_DOMAIN.substring(0, $env:CERTBOT_DOMAIN.indexOf($env:domain))
 $acme = "_acme-challenge"
 
+Start-Sleep -s 60
 & $updater -s "$env:provider" -c $env:CERTBOT_VALIDATION -p="$acme.$subdomain" -t TXT
 
 Set-Location $loc
@@ -18,6 +19,3 @@ While ((dig -t TXT "$acme.$env:CERTBOT_DOMAIN" +noall +answer +short) -ne "`"$en
 }
 
 Write-Host "DNS matched. Done"
-ipconfig /flushdns
-Start-Sleep -s 120
-ipconfig /flushdns

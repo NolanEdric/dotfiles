@@ -8,11 +8,13 @@ certbot certonly `
   --email tidunguyen@aol.com `
   --preferred-challenges=dns `
   --server https://acme-v02.api.letsencrypt.org/directory `
-  -d "*.kube.$env:domain" `
-  -d "kube.$env:domain" `
-  --manual-auth-hook "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -executionpolicy bypass C:/Users/TiDu/repos/certbot-hooks/update_acme.ps1" `
-  --manual-cleanup-hook "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -executionpolicy bypass C:/Users/TiDu/repos/certbot-hooks/cleanup_acme.ps1" `
-  --post-hook "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -executionpolicy bypass C:/Users/TiDu/repos/certbot-hooks/post_hook.ps1"
+  -d "k8s.$env:domain" `
+  -d "*.k8s.$env:domain" `
+  --manual-auth-hook "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy bypass C:/Users/TiDu/repos/certbot-hooks/update_acme.ps1" `
+  --manual-cleanup-hook "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy bypass C:/Users/TiDu/repos/certbot-hooks/cleanup_acme.ps1" `
+  --post-hook "C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -noprofile -executionpolicy bypass C:/Users/TiDu/repos/certbot-hooks/post_hook.ps1"`
+  --preferred-chain  "ISRG Root X1"`
+  -v
 
   # -d *.k3s.tidu.live `
   # --pre-hook "C:\ProgramData\chocolatey\bin\nssm.exe stop nginx" `

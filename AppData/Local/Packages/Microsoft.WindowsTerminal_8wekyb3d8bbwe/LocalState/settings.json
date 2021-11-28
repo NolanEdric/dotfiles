@@ -76,7 +76,7 @@
             "closeOnExit": "always",
             "font": 
             {
-                "face": "MesloLGS NF",
+                "face": "JetBrainsMono NF",
                 "size": 9
             },
             "scrollbarState": "hidden"
@@ -92,7 +92,7 @@
             {
                 "commandline": "powershell.exe -noe -ExecutionPolicy Bypass -c \"&{Import-Module \\\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Enterprise\\Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll\\\"; Enter-VsDevShell 11b8667c}\"",
                 "guid": "{bb4ecd66-dd50-4286-81c9-f4efafe734e6}",
-                "icon": "C:\\Users\\TiDu\\Pictures\\icons8-visual-studio-2019-32.png",
+                "icon": "C:\\Users\\TiDu\\Pictures\\icons8-visual-studio-2019-48.png",
                 "name": "VS Dev Powershell"
             },
             {
@@ -108,24 +108,11 @@
                 "source": "Windows.Terminal.Azure"
             },
             {
-                "commandline": "debian.exe",
-                "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
-                "hidden": false,
-                "icon": "C:\\Users\\TiDu\\Pictures\\debian.png",
-                "name": "Debian",
-                "source": "Windows.Terminal.Wsl"
-            },
-            {
-                "commandline": "arch.exe",
+                "commandline": "wsl -d arch --cd ~",
                 "guid": "{89fa2078-aec4-4cc5-af0f-219f15d5ea20}",
                 "hidden": false,
-                "icon": "C:\\Users\\TiDu\\Pictures\\arch.png",
+                "icon": "C:\\Users\\TiDu\\Pictures\\arch-linux-icon.png",
                 "name": "Arch"
-            },
-            {
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-                "name": "Ubuntu",
-                "source": "Windows.Terminal.Wsl"
             }
         ]
     },

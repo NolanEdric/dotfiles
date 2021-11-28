@@ -1,6 +1,7 @@
 Import-Module posh-git
 Import-Module oh-my-posh
-Set-PoshPrompt -Theme iterm2
+Import-Module -Name Terminal-Icons
+Set-PoshPrompt -Theme powerlevel10k_modern
 
 # Chocolatey profile
 $ChocolateyProfile = "$env:ChocolateyInstall\helpers\chocolateyProfile.psm1"
@@ -15,5 +16,9 @@ Set-PSReadlineKeyHandler -Key Tab -Function MenuComplete
 Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 
-$env:BW_SESSION="9ugAleOixlubpdTbLrmW+RCLlqZ2Axlh7CMNfUtXVfG5nVoPUwEO9whgAt5wRAqOa0bK+Ky7956AScgYwWFzfw=="
+Get-ChildItem "$HOME\completions\*.ps1" | ForEach-Object {
+  . $_.FullName
+}
+
+$env:BW_SESSION="6OQirQdZOFd/DUydBqjkE+7m/iEmWCYXyncE4urdfhc2kQiJgach6gmdQRC3TXR3cNJ8V5QMgyAyAu1VWSXUdg=="
 $env:MICRO_TRUECOLOR=1

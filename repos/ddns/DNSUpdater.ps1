@@ -22,7 +22,7 @@ if ($ipv6 -ne $ip.ipv6) {
 
 if ($wsl -ne $ip.wsl) {
     # & $updater -s dynu -c $wsl
-    & "$PSScriptRoot\wsl-host.ps1" -ip $wsl
+    & $updater -s "$($provider)_simple" -c $wsl -p "*."
     $ip.wsl = $wsl
 }
 
