@@ -2,6 +2,8 @@ version: "3"
 
 networks:
   gitea:
+  tidu1:
+    external: true
 
   
 volumes:
@@ -24,15 +26,18 @@ services:
       - ENABLE_OPENID_SIGNIN=true
     restart: always
     networks:
-      - gitea
+      gitea:
+      tidu1:
+        aliases:
+          - git
     volumes:
       - gitea:/data
       - /etc/timezone:/etc/timezone:ro
       - /etc/localtime:/etc/localtime:ro
       # - ./.gitconfig:/data/git/.gitconfig
-    ports:
-      - 127.0.0.1:60002:3000
-      - 127.0.0.1:60003:22
+    # ports:
+    #   - 60002:3000
+    #   - 60003:22
     depends_on:
       - db
   db:
