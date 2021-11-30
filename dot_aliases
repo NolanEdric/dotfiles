@@ -1,7 +1,7 @@
 # enable color support of ls and also add handy aliases
 if [ -x /usr/bin/dircolors ]; then
     test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
-    alias ls='colorls --sf'
+    alias ls='colorls --sd'
     #alias dir='dir --color=auto'
     #alias vdir='vdir --color=auto'
 
@@ -14,9 +14,9 @@ fi
 #export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
 # some more ls aliases
-alias ll='colorls -alh --sf'
-alias la='colorls -hA --sf'
-alias l='colorls -Ch --sf'
+alias ll='colorls -alh --sd'
+alias la='colorls -hA --sd'
+alias l='colorls -Ch --sd'
 
 # Add an "alert" alias for long running commands.  Use like so:
 #   sleep 10; alert
