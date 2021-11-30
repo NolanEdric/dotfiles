@@ -1,2 +1,0 @@
-#! /usr/bin/env zsh
-sudo apt install haproxy haproxyctl -y
