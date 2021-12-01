@@ -74,6 +74,7 @@
                 "taskbar"
             ],
             "closeOnExit": "always",
+            "colorScheme": "Campbell",
             "font": 
             {
                 "face": "JetBrainsMono NF",
@@ -92,6 +93,7 @@
             {
                 "commandline": "powershell.exe -noe -ExecutionPolicy Bypass -c \"&{Import-Module \\\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Enterprise\\Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll\\\"; Enter-VsDevShell 11b8667c}\"",
                 "guid": "{bb4ecd66-dd50-4286-81c9-f4efafe734e6}",
+                "hidden": true,
                 "icon": "C:\\Users\\TiDu\\Pictures\\icons8-visual-studio-2019-48.png",
                 "name": "VS Dev Powershell"
             },
@@ -113,6 +115,69 @@
                 "hidden": false,
                 "icon": "C:\\Users\\TiDu\\Pictures\\arch-linux-icon.png",
                 "name": "Arch"
+            },
+            {
+                "commandline": "wsl.exe -d Ubuntu --cd ~",
+                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
+                "hidden": false,
+                "icon": "C:\\Users\\TiDu\\Pictures\\ubuntu.png",
+                "name": "Ubuntu",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "commandline": "wsl.exe -d Debian --cd ~",
+                "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
+                "hidden": false,
+                "icon": "C:\\Users\\TiDu\\Pictures\\debian.png",
+                "name": "Debian",
+                "source": "Windows.Terminal.Wsl"
+            },
+            {
+                "commandline": "C:/msys64/msys2_shell.cmd -defterm -here -use-full-path -no-start -msys",
+                "guid": "{71160544-14d8-4194-af25-d05feeac7233}",
+                "hidden": true,
+                "icon": "C:/msys64/msys2.ico",
+                "name": "MSYS / MSYS2",
+                "startingDirectory": "C:/msys64/home/%USERNAME%"
+            },
+            {
+                "commandline": "C:/msys64/msys2_shell.cmd -defterm -here -use-full-path -no-start -mingw64",
+                "guid": "{17da3cac-b318-431e-8a3e-7fcdefe6d114}",
+                "hidden": true,
+                "icon": "C:/msys64/mingw64.ico",
+                "name": "MINGW64 / MSYS2",
+                "startingDirectory": "C:/msys64/home/%USERNAME%"
+            },
+            {
+                "commandline": "C:/msys64/msys2_shell.cmd -defterm -here -use-full-path -no-start -ucrt64",
+                "guid": "{0b44d77f-84be-463c-8d5f-74645aef1c76}",
+                "icon": "C:/msys64/ucrt64.ico",
+                "name": "UCRT64 / MSYS2",
+                "startingDirectory": "C:/msys64/home/%USERNAME%"
+            },
+            {
+                "commandline": "C:/msys64/msys2_shell.cmd -defterm -here -use-full-path -no-start -clangarm64",
+                "guid": "{3a896f2c-4baf-4e47-9509-34cbbd17445f}",
+                "hidden": true,
+                "icon": "C:/msys64/clangarm64.ico",
+                "name": "CLANGARM64 / MSYS2",
+                "startingDirectory": "C:/msys64/home/%USERNAME%"
+            },
+            {
+                "commandline": "C:/msys64/msys2_shell.cmd -defterm -here -use-full-path -no-start -mingw32",
+                "guid": "{2d51fdc4-a03b-4efe-81bc-722b7f6f3820}",
+                "hidden": true,
+                "icon": "C:/msys64/mingw32.ico",
+                "name": "MINGW32 / MSYS2",
+                "startingDirectory": "C:/msys64/home/%USERNAME%"
+            },
+            {
+                "commandline": "C:/msys64/msys2_shell.cmd -defterm -here -use-full-path -no-start -clang32",
+                "guid": "{ca42f1ca-036a-4c35-81ed-1579e81fb206}",
+                "hidden": true,
+                "icon": "C:/msys64/clang32.ico",
+                "name": "CLANG32 / MSYS2",
+                "startingDirectory": "C:/msys64/home/%USERNAME%"
             }
         ]
     },
@@ -329,5 +394,5 @@
     "tabWidthMode": "compact",
     "trimBlockSelection": true,
     "useAcrylicInTabRow": true,
-    "windowingBehavior": "useExisting"
+    "windowingBehavior": "useNew"
 }
