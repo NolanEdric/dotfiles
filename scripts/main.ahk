@@ -1,4 +1,4 @@
-#t:: Run wt
+#t:: Run wt -p "Arch"
 >^>+Insert::Send ^a
 >^Insert::Send ^c
 >+Insert::Send ^v
