@@ -1,0 +1,9 @@
+#!/usr/bin/env zsh
+
+#Client ID
+export Dynu_ClientId='{{ (bitwarden "item" "Dynu API Credentials").login.username }}'
+#
+#Secret
+export Dynu_Secret='{{ (bitwarden "item" "Dynu API Credentials").login.password }}'
+
+acme.sh --issue -d tidu.giize.com -d '*.tidu.giize.com' --dns dns_dynu --server https://acme-v02.api.letsencrypt.org/directory
