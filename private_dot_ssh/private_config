@@ -1,9 +1,9 @@
-Host github.com
+Host gh-tidunguyen
 	HostName github.com
 	User git
 	IdentityFile ~/.ssh/github/tidunguyen/id_rsa
 
-Host win
-	HostName 10.0.0.1
-	User tidu
-	IdentityFile ~/.ssh/win/id_rsa
+Host gh-projects
+	HostName github.com
+	User git
+	IdentityFile ~/.ssh/github/projects/id_rsa

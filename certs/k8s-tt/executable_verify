@@ -1,3 +1,0 @@
-#! /usr/bin/env zsh
-
-openssl verify -verbose -CAfile ../root-ca/ca.crt k8s-tt.crt

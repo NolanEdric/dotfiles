@@ -19,3 +19,4 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 git clone https://github.com/zsh-users/zsh-completions ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-completions
 
 git clone https://github.com/romkatv/zsh-defer.git ${ZSH_CUSTOM:=~/.oh-my-zsh/custom}/plugins/zsh-defer
+

@@ -1,1 +1,0 @@
-export CAROOT="$HOME/certs/root-ca"
