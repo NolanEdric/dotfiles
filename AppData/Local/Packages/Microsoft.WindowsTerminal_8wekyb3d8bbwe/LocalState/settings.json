@@ -94,7 +94,7 @@
                 "commandline": "powershell.exe -noe -ExecutionPolicy Bypass -c \"&{Import-Module \\\"C:\\Program Files (x86)\\Microsoft Visual Studio\\2019\\Enterprise\\Common7\\Tools\\Microsoft.VisualStudio.DevShell.dll\\\"; Enter-VsDevShell 11b8667c}\"",
                 "guid": "{bb4ecd66-dd50-4286-81c9-f4efafe734e6}",
                 "hidden": true,
-                "icon": "C:\\Users\\TiDu\\Pictures\\icons8-visual-studio-2019-48.png",
+                "icon": "C:\\Users\\TiDu\\Pictures\\vs.png",
                 "name": "VS Dev Powershell"
             },
             {
@@ -113,7 +113,7 @@
                 "commandline": "wsl -d arch --cd ~",
                 "guid": "{89fa2078-aec4-4cc5-af0f-219f15d5ea20}",
                 "hidden": false,
-                "icon": "C:\\Users\\TiDu\\Pictures\\arch-linux-icon.png",
+                "icon": "C:\\Users\\TiDu\\Pictures\\arch.png",
                 "name": "Arch"
             },
             {

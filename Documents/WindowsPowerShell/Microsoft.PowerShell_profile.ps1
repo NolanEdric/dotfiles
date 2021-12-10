@@ -20,5 +20,5 @@ Get-ChildItem "$HOME\completions\*.ps1" | ForEach-Object {
   . $_.FullName
 }
 
-$env:BW_SESSION="6OQirQdZOFd/DUydBqjkE+7m/iEmWCYXyncE4urdfhc2kQiJgach6gmdQRC3TXR3cNJ8V5QMgyAyAu1VWSXUdg=="
+$env:BW_SESSION="qZODrAUW8unBmpitK292BaW0RKCcHIsJtxqdRWQiWQSzGo9g+omQWGWJ3lRViyAzWMAwM5kgQ3feC2UvXer6ZQ=="
 $env:MICRO_TRUECOLOR=1
