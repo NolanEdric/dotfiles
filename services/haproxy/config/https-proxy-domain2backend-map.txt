@@ -1,5 +1,0 @@
-cr.tidu.giize.com be_cr_https_proxied
-git.tidu.giize.com be_git_https_proxied
-plantuml.tidu.giize.com be_plantuml_https_proxied
-minio.tidu.giize.com be_minio_https_proxied
-minio-console.tidu.giize.com be_minio-console_https_proxied

@@ -1,8 +1,0 @@
-#! /usr/bin/env zsh
-
-openssl req -new \
-    -newkey rsa:4096 \
-    -out k8s-tt.csr \
-    -keyout k8s-tt.key \
-    -nodes \
-    -sha256

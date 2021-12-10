@@ -1,2 +1,0 @@
-ca.tidu.giize.com    be_ca_https_passthrough
-k8s.tidu.giize.com   be_k8s_https_passthrough
