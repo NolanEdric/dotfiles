@@ -1,7 +1,7 @@
 version: '3'
 
 networks:
-  tidu1:
+  shiba:
     external: true
 
 services:
@@ -11,4 +11,4 @@ services:
     environment:
       - ALLOW_PLANTUML_INCLUDE=true
     networks:
-      - tidu1
+      - shiba

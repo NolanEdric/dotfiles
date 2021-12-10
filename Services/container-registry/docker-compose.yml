@@ -21,7 +21,7 @@ services:
       - registry
     networks:
       registry-ui-net:
-      tidu1:
+      shiba:
         aliases:
           - cr
     restart: always
@@ -31,5 +31,5 @@ volumes:
 
 networks:
   registry-ui-net:
-  tidu1:
+  shiba:
     external: true

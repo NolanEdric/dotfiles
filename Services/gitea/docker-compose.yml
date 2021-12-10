@@ -2,7 +2,7 @@ version: "3"
 
 networks:
   gitea:
-  tidu1:
+  shiba:
     external: true
 
   
@@ -27,7 +27,7 @@ services:
     restart: always
     networks:
       gitea:
-      tidu1:
+      shiba:
         aliases:
           - git
     volumes:

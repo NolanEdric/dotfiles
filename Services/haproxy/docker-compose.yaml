@@ -1,8 +1,11 @@
 version: '3'
 
 networks:
-  tidu1:
+  shiba:
     external: true
+  minikube:
+    external: true
+
 
 services:
   haproxy:
@@ -14,7 +17,8 @@ services:
       - 563:563
       - 127.0.0.1:10000:10000
     networks:
-      - tidu1
+      - shiba
+      - minikube
     volumes:
       - ./config:/usr/local/etc/haproxy
-      - /mnt/c/Users/TiDu/repos/certbot-hooks/live:/live:ro
+      - /home/tidu/.acme.sh:/live:ro
