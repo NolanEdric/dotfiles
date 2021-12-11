@@ -1,0 +1,43 @@
+$config_file = "$PSScriptRoot/ip.json"
+# $updater = "$PSScriptRoot/ddns.exe"
+# $provider = "dynu"
+
+$ip = (Get-Content $config_file -Raw) | ConvertFrom-Json
+
+$ipv4 = ((Get-NetIPAddress -AddressFamily IPv4 -InterfaceAlias Ethernet).IPAddress).Trim()
+$ipv6 = ((Get-NetIPAddress -AddressFamily IPv6 -InterfaceAlias Ethernet -PrefixLength 128 -PrefixOrigin RouterAdvertisement -SuffixOrigin Random).IPAddress).Trim()
+$wsl = (wsl echo '$IPv4').Trim()
+# $should_update = $false
+$username = "{{ (bitwarden "item" "412c6367-5560-4f49-b39e-ade5003de398").login.username }}"
+$password = "{{ (bitwarden "item" "412c6367-5560-4f49-b39e-ade5003de398").login.password }}"
+$encodedCreds =  [System.Convert]::ToBase64String([System.Text.Encoding]::ASCII.GetBytes("${username}:${password}"))
+
+# if () {
+#     # & $updater -s "$provider" -c $ipv4
+#     # & $updater -s "$provider" -c $ipv4 -p "*."
+#     $should_update = $true
+   
+# }
+
+# if () {
+#     # & $updater -s "$provider" -c $ipv6 -t AAAA
+#     # & $updater -s "$provider" -c $ipv6 -t AAAA -p "*."
+#     $should_update = $true
+    
+# }
+
+if ($ipv4 -ne $ip.ipv4 -or $ipv6 -ne $ip.ipv6) {
+    Write "Updating"
+    iwr "https://api.dynu.com/nic/update?hostname=tidu.giize.com&myip=${ipv4}&myipv6=${ipv6}" -H @{ Authorization = "Basic ${encodedCreds}" }
+    $ip.ipv4 = $ipv4
+    $ip.ipv6 = $ipv6
+}
+
+if ($wsl -ne $ip.wsl) {
+    # & $updater -s dynu -c $wsl
+    # & $updater -s "$($provider)_simple" -c $wsl -p "*."
+    iwr "https://api.dynu.com/nic/update?hostname=tidu.ooguy.com&myip=${wsl}&myipv6=no" -H @{ Authorization = "Basic ${encodedCreds}" }
+    $ip.wsl = $wsl
+}
+
+$ip | ConvertTo-Json | Set-Content $config_file

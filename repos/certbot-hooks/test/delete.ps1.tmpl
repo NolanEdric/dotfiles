@@ -1,0 +1,8 @@
+$headers = @{
+  "API-Key"      = "{{ (bitwardenFields "item" "412c6367-5560-4f49-b39e-ade5003de398").apikey.value }}"
+}
+
+
+$record_id = get-content "$env:temp\acme_record_id"
+
+iwr "https://api.dynu.com/v2/dns/9601662/record/${record_id}" -Method Delete -Headers $headers

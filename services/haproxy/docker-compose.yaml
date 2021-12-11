@@ -1,0 +1,20 @@
+version: '3'
+
+networks:
+  shiba:
+    external: true
+
+services:
+  haproxy:
+    image: haproxy:2.4-alpine
+    restart: always
+    ports:
+      - 80:80
+      - 443:443
+      - 563:563
+      - 127.0.0.1:10000:10000
+    networks:
+      - shiba
+    volumes:
+      - ./config:/usr/local/etc/haproxy
+      - C:\Users\TiDu\repos\certbot-hooks\live:/live:ro

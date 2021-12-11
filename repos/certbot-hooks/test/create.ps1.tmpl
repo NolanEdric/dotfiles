@@ -1,0 +1,16 @@
+$headers = @{
+  "Content-Type" = "application/json"
+  "API-Key"      = "{{ (bitwardenFields "item" "412c6367-5560-4f49-b39e-ade5003de398").apikey.value }}"
+}
+
+$body = @{
+  nodeName   = "abc"
+  recordType = "TXT"
+  ttl        = 0
+  state      = $true
+  group      = ""
+  textData   = "hello"
+}
+
+$res = iwr "https://api.dynu.com/v2/dns/9601662/record" -Method Post -Headers $headers -Body ($body|ConvertTo-Json)
+Set-Content -Path "$env:temp\acme_record_id" -Value (ConvertFrom-Json $res).id

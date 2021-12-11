@@ -17,6 +17,6 @@ $cert | Out-File -Encoding ASCII ".\live\$outdir\tls.crt"
 $key | Out-File -Encoding ASCII ".\live\$outdir\tls.key"
 $cert, $key | Out-File -Encoding ASCII ".\live\$outdir\tls.pem"
 
-Start-Sleep 1
+# Start-Sleep 1
 
 # "C:\Windows\System32\wsl.exe -- sudo systemctl restart haproxy"
