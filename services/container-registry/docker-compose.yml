@@ -5,6 +5,7 @@ services:
     volumes:
       - registry-data:/var/lib/registry
       - ./config.yaml:/etc/docker/registry/config.yml
+      - ./htpasswd:/etc/docker/registry/htpasswd
     networks:
       - registry-ui-net
     restart: always
@@ -24,6 +25,8 @@ services:
       shiba:
         aliases:
           - cr
+    ports:
+      - 3008:80
     restart: always
 
 volumes:
@@ -33,3 +36,4 @@ networks:
   registry-ui-net:
   shiba:
     external: true
+

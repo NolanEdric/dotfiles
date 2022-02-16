@@ -1,2 +1,12 @@
+[user]
+	name = Gitea
+	email = gitea@fake.local
+[core]
+	quotePath = false
+	commitGraph = true
+[receive]
+	advertisePushOptions = true
+[gc]
+	writeCommitGraph = true
 [uploadpack]
 	allowfilter = true
