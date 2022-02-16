@@ -7,3 +7,14 @@ Host gh-projects
 	HostName github.com
 	User git
 	IdentityFile ~/.ssh/github/projects/id_rsa
+
+Host git2.gnt-global.com
+	HostName git2.gnt-global.com
+	User git
+	IdentityFile ~/.ssh/gnt-gitlab/id_rsa
+
+Host git.tidu.giize.com
+	HostName gitea
+	User git
+	IdentityFile ~/.ssh/gitea/id_rsa
+	ProxyCommand openssl s_client -verify_quiet -quiet -connect tidu.giize.com:22 -servername ssh_git
