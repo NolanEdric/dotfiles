@@ -157,4 +157,7 @@ export TIMEFMT=$'\n================\nCPU\t%P\nuser\t%*U\nsystem\t%*S\ntotal\t%*E
 
 # zprof 
 
+
+complete -C '/bin/aws_completer' aws
+
 precmd() { zsh-defer -1c 'echo -ne "\e[5 q"' }
