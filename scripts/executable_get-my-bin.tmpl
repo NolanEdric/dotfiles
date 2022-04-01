@@ -1,0 +1,41 @@
+#!/usr/bin/env bash
+
+BIN_DIR="$HOME/bin"
+export GITHUB_API_TOKEN={{ (bitwarden "item" "latestversion GH token").login.password }}
+
+function get_bin () {
+  REPO=${1}
+  NAME=${2}
+  TYPE=${3}
+  VERSION_PREFIX=${4}
+  CHECK_COMMAND=${5}
+  LATEST_VERSION=$(lastversion "$REPO")
+  VERSION="$VERSION_PREFIX$LATEST_VERSION"
+  BIN_LATEST="$BIN_DIR/$NAME"
+  BIN_CURRENT="$BIN_LATEST-$VERSION"
+
+  if eval "$CHECK_COMMAND" | grep "$LATEST_VERSION"; then
+    echo "Current version is latest. Skip updating"
+  else
+    echo "Updating $NAME to version $VERSION from $REPO:"
+    
+    if [[ ${TYPE} == "gz" ]]; then
+      curl -L "$REPO/releases/download/$VERSION/$NAME-linux-amd64.gz" | gunzip - > "$BIN_CURRENT"
+    elif [[ ${TYPE} == "tar" ]]; then
+      curl -L "$REPO/releases/download/$VERSION/$NAME-linux-amd64.tar" | tar xzf - "$BIN_CURRENT"
+    elif [[ ${TYPE} == "tar.gz" ]]; then
+      curl -L "$REPO/releases/download/$VERSION/$NAME-linux-amd64.tar" | tar xzf - "$BIN_CURRENT"
+    else
+      curl -L "$REPO/releases/download/$VERSION/$NAME-linux-amd64"  -o "$BIN_CURRENT"
+    fi
+    chmod +x "$BIN_CURRENT"
+    ln -sf "$BIN_CURRENT" "$BIN_LATEST"
+    "$NAME" completion zsh | "$NAME" completion zsh > "$HOME/.oh-my-zsh/completions/_$NAME"
+  fi
+
+  printf -- '-%.0s' $(seq 100); echo -e "\ndone\n"
+}
+
+get_bin https://github.com/argoproj/argo-workflows argo gz v "argo version"
+
+get_bin https://github.com/vmware-tanzu/carvel-ytt ytt "" v "ytt version"

@@ -13,6 +13,11 @@ Host git2.gnt-global.com
 	User git
 	IdentityFile ~/.ssh/gnt-gitlab/id_rsa
 
+Host gitlab.com
+	HostName gitlab.com
+	User git
+	IdentityFile ~/.ssh/gitlab/id_rsa
+
 Host git.tidu.giize.com
 	HostName gitea
 	User git
