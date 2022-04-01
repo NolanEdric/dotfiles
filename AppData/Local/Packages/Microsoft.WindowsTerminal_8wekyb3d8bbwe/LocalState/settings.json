@@ -102,7 +102,7 @@
                 "commandline": "ssh iu-vm",
                 "guid": "{a270e23b-88b1-494f-9086-86213817be97}",
                 "hidden": false,
-                "icon": "C:\\Users\\TiDu\\OneDrive - VietNam National University - HCM INTERNATIONAL UNIVERSITY\\IULogo25x25.png",
+                "icon": "C:\\Users\\TiDu\\Pictures\\IULogo25x25.png",
                 "name": "IU-VM"
             },
             {
@@ -123,22 +123,6 @@
                 "hidden": false,
                 "icon": "C:\\Users\\TiDu\\Pictures\\arch.png",
                 "name": "Arch"
-            },
-            {
-                "commandline": "wsl.exe -d Ubuntu --cd ~",
-                "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-                "hidden": false,
-                "icon": "C:\\Users\\TiDu\\Pictures\\ubuntu.png",
-                "name": "Ubuntu",
-                "source": "Windows.Terminal.Wsl"
-            },
-            {
-                "commandline": "wsl.exe -d Debian --cd ~",
-                "guid": "{58ad8b0c-3ef8-5f4d-bc6f-13e4c00f2530}",
-                "hidden": false,
-                "icon": "C:\\Users\\TiDu\\Pictures\\debian.png",
-                "name": "Debian",
-                "source": "Windows.Terminal.Wsl"
             },
             {
                 "commandline": "C:/msys64/msys2_shell.cmd -defterm -here -use-full-path -no-start -msys",
