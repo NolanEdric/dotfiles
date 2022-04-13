@@ -6,3 +6,5 @@
 ;AppsKey & Backspace::Send ^z
 ;Ctrl & AppsKey::Send ^s
 ; AppsKey
+CapsLock::Backspace
+Backspace::CapsLock
