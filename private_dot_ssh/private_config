@@ -7,3 +7,18 @@ Host gh-projects
 	HostName github.com
 	User git
 	IdentityFile ~/.ssh/github/projects/id_rsa
+
+Host ip4to6-aws
+	HostName ec2-54-169-183-78.ap-southeast-1.compute.amazonaws.com
+	User ubuntu
+	IdentityFile C:\Users\TiDu\.ssh\ip4to6-home\id_rsa@aws
+
+Host ip4to6-oracle
+	HostName 168.138.189.139
+	User ubuntu
+	IdentityFile C:\Users\TiDu\.ssh\ip4to6-home\id_rsa@oracle
+
+Host ai-parcv
+	HostName 13.214.115.227
+	User ubuntu
+	IdentityFile C:\Users\TiDu\.ssh\gnt\ai-parcv\id_rsa
