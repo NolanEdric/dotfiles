@@ -23,3 +23,8 @@ Host git.tidu.giize.com
 	User git
 	IdentityFile ~/.ssh/gitea/id_rsa
 	ProxyCommand openssl s_client -verify_quiet -quiet -connect tidu.giize.com:22 -servername ssh_git
+
+Host gpu-ng
+	HostName 3.0.98.39
+	User ec2-user
+	IdentityFile ~/.ssh/tmp-key/id_rsa

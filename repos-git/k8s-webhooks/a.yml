@@ -1,0 +1,8 @@
+---
+foo: 14
+bar:
+#@ for/end name in ["Alice", "Bob", "world"]:
+- #@ "Hello, " + name
+---
+#@ load("@ytt:data", "data")
+service: #@ data.values.load_balancer

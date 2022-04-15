@@ -2,4 +2,10 @@ for file in ~/.zprofile.d/*.zsh; do
     . "$file"
 done
 
+function enable_conda() {
+    [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
+}
+
 # cd
+enable_conda
+conda activate base

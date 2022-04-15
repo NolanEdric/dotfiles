@@ -25,6 +25,10 @@ function get_bin () {
       curl -L "$REPO/releases/download/$VERSION/$NAME-linux-amd64.tar" | tar xzf - "$BIN_CURRENT"
     elif [[ ${TYPE} == "tar.gz" ]]; then
       curl -L "$REPO/releases/download/$VERSION/$NAME-linux-amd64.tar" | tar xzf - "$BIN_CURRENT"
+    elif [[ ${TYPE} == "jar" ]]; then
+      BIN_LATEST="$BIN_LATEST.jar"
+      BIN_CURRENT="$BIN_CURRENT.jar"
+      curl -L "$REPO/releases/download/$VERSION/$NAME.jar" > "$BIN_CURRENT"
     else
       curl -L "$REPO/releases/download/$VERSION/$NAME-linux-amd64"  -o "$BIN_CURRENT"
     fi
@@ -39,3 +43,5 @@ function get_bin () {
 get_bin https://github.com/argoproj/argo-workflows argo gz v "argo version"
 
 get_bin https://github.com/vmware-tanzu/carvel-ytt ytt "" v "ytt version"
+
+get_bin https://github.com/databricks/sjsonnet sjsonnet "jar" "" "sjsonnet.jar"

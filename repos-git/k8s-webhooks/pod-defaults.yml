@@ -1,0 +1,14 @@
+apiVersion: admissionregistration.k8s.io/v1
+kind: MutatingWebhookConfiguration
+metadata:
+  name: pod-defaults
+webhooks:
+  - admissionReviewVersions:
+      - ""
+    clientConfig:
+      url: https://test5.gambaru.io
+    name: env-injection
+    sideEffects: "inject environments to pods"
+    rules:
+      - resources:
+          - pods

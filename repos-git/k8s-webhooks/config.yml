@@ -1,0 +1,29 @@
+matcher:
+  key: _ymlex_
+  level:
+    min: 3
+    max: 6
+
+solver:
+  bitwarden:
+    type: python
+    env.yml:
+    location:
+      dir: s3|http|git|local
+    inline: |
+      hello
+  aws:
+    type: binary
+    args:
+      - -o=yaml
+    location: s3|http|git|local
+  my-custom-solver:
+    type: bash
+    env.yml:
+    location:
+
+    
+      file: s3|http|git|local
+    inline: |
+      world
+      

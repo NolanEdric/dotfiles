@@ -13,3 +13,9 @@ start: create
 
 delete:
 	minikube delete
+
+ytt:
+	ytt -f . --file-mark '**/*.ytt:type=yaml-template'
+
+ytt-schema:
+	ytt -f . --file-mark '**/*.ytt:type=yaml-template' --data-values-schema-inspect --output openapi-v3

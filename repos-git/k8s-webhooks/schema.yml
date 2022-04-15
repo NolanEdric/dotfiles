@@ -1,0 +1,5 @@
+#@data/values-schema
+---
+load_balancer:
+  enabled: true
+  external_ip: ""
