@@ -6,4 +6,7 @@ function enable_conda() {
     [ -f /opt/miniconda3/etc/profile.d/conda.sh ] && source /opt/miniconda3/etc/profile.d/conda.sh
 }
 
+function enable_nvm() {
+    source /usr/share/nvm/init-nvm.sh
+}
 # cd
